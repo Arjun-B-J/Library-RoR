@@ -1,0 +1,8 @@
+<h3>Update Book Details</h3>
+<%= form_with model: @book do |form| %>
+  <%= form.text_field :b_title, placeholder: "title" %>
+  <%= form.text_field :author, placeholder: "author" %>
+  <%= form.text_field :publisher, placeholder: "publisher" %>
+  <%= form.text_field :year, placeholder: "year" %>
+  <%= form.submit %>
+<% end %>

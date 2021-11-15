@@ -1,0 +1,8 @@
+<h1>Books</h1>
+<%= link_to 'Remove', @book, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<h1><%= @book.b_title %></h1>
+<h4><%= @book.b_id %></h4>
+<h4><%= @book.publisher %></h4>
+<h4><%= @book.author %></h4>
+<h4><%= @book.year %></h4>
