@@ -1,12 +1,12 @@
 class BooksController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
-    @books = Book.all
-    @output = json: Book.all
-    render output
+    render json: Book.all
   end
 
   def show
-    @book = Book.find(params[:id])
+    render json: Book.find(params[:id])
   end
 
   def new
@@ -15,8 +15,7 @@ class BooksController < ApplicationController
 
   def create
     book = Book.create(book_params)
-
-    redirect_to book_path(book)
+    render json: book
   end
 
   def edit
@@ -24,20 +23,20 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book = Book.find(params[:id])
-    @book.update(book_params)
+    book = Book.find(params[:id])
+    book.update(:b_title=> params[:title], :author=> params[:author], :publisher=> params[:publisher], :year=> params[:year])
+    render json: book
 
-    redirect_to book_path(@book)
   end
 
   def destroy
-    @book = Book.find(params[:id])
-    @book.destroy
-    
-    redirect_to books_path
+    book = Book.find(params[:id])
+    Book.destroy(params[:id])
+    render json: book
   end
 
   private
+
   def book_params
     params.require(:book).permit(:b_id, :b_title, :author, :publisher, :year)
   end

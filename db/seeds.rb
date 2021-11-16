@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Book.create(b_id: 1, b_title: 'Shakespeare', publisher: 'ShakesKing', author: 'ShakesMilk', year: '1650')
-Book.create(b_id: 2, b_title: 'Deception Point', publisher: 'Dan Brown Publishing', author: 'Dan Brown', year: '2012')
-Book.create(b_id:3, b_title:'2 States',publisher:'chetan bhagat publications' , author: 'Chetan Bhagat', year: '2008')
+Book.create(b_id: 1, b_title: 'Othello', publisher: 'Old Book Publications', author: 'Shakesphere', year: 1650)
+Book.create(b_id: 2, b_title: 'Deception Point', publisher: 'Dan Brown Publishing', author: 'Dan Brown', year: 2012)
+Book.create(b_id:3, b_title:'2 States',publisher:'chetan bhagat publications' , author: 'Chetan Bhagat', year: 2008)
